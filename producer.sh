@@ -6,7 +6,6 @@ products=("Donut" "Carrot" "Tie" "Glasses" "Phone" "Ice cream" "Dress" "Pineappl
 
 for i in {1..50}
 do
-
   randomCustomerId=$(($RANDOM%7))
   echo "
   {
