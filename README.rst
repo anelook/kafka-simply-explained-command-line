@@ -23,9 +23,11 @@ To send messages to Apache Kafka cluster we'll use kcat in a producer mode. You 
 
     echo '''
     {
-        name : test1
+        customer: Judy Hopps
+        product: Donut
+        operation: searched
     }
-    ''' | kcat -F kcat.config -P -t customer-activity  -k test-message-key
+    ''' | kcat -F kcat.config -P -t customer-activity
 
 Alternatively, I prepared a bash script located in `producer.sh`. It will send 50 randomised messages into the topic. Don't forget to run ``chmod +x ./send-messages.sh`` in order to give access permissions.
 
@@ -45,10 +47,13 @@ You should see any of the messages you already sent o the topic. Also, the proce
 
 Resources and additional materials
 ----------------------------------
-1. `A ready fake data generator <https://developer.aiven.io/docs/products/kafka/howto/fake-sample-data.html>`_ to source data into Apache Kafka cluster.
-2. `Teach yourself Apache Kafka and Python with a Jupyter Notebook <https://aiven.io/blog/teach-yourself-apache-kafka-and-python-with-a-jupyter-notebook>`_.
-3. `How to use Karapace schema registry <https://aiven.io/blog/what-is-karapace>`_ to align the structure of data coming to Kafka cluster.
-4. `How to use Apache Kafka Connect as streaming bridge between different database technologies <https://aiven.io/blog/db-technology-migration-with-apache-kafka-and-kafka-connect>`_.
+#. `Official docs for Apache Kafka <https://kafka.apache.org/>`_.
+#. `Official docs for Apache Kafka Connect API <https://kafka.apache.org/documentation/#connect>`_.
+#. `Official docs for Apache Kafka Streams <https://kafka.apache.org/documentation/streams/>`_.
+#. `A ready fake data generator <https://developer.aiven.io/docs/products/kafka/howto/fake-sample-data.html>`_ to source data into Apache Kafka cluster.
+#. `How to use kcat <https://developer.aiven.io/docs/products/kafka/howto/kcat.html>`_. A very handy utility to work with Apache Kafka from command line.
+#. `How to use Karapace schema registry <https://aiven.io/blog/what-is-karapace>`_ to align the structure of data coming to Kafka cluster.
+#. `How to use Apache Kafka Connect as streaming bridge between different database technologies <https://aiven.io/blog/db-technology-migration-with-apache-kafka-and-kafka-connect>`_.
 
 License
 -------
